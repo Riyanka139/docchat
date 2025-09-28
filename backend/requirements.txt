@@ -1,9 +1,21 @@
-torch==2.8.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu
-chromadb==1.0.4
-sentence-transformers==2.2.2
+# FastAPI backend
 fastapi==0.115.9
 uvicorn==0.23.2
 python-multipart==0.0.6
+
+# PDF parsing
 PyPDF2==3.0.1
+
+# Embeddings & vector DB
+chromadb==1.0.4
+
+# Sentence Transformers & Torch (CPU-only wheels)
+-f https://download.pytorch.org/whl/cpu/torch_stable.html
+torch==2.8.0
+sentence-transformers==2.2.2
+
+# LLM / summarization
 transformers==4.42.2
+
+# Environment variables
 python-dotenv==1.1.1
