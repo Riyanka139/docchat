@@ -1,8 +1,18 @@
-fastapi==0.109.2
+# FastAPI backend
+fastapi==0.115.9
 uvicorn==0.23.2
 python-multipart==0.0.6
+
+# PDF parsing
 PyPDF2==3.0.1
-chromadb==1.1.0
+
+# Embeddings & vector DB
+chromadb==1.0.3
 sentence-transformers==2.2.2
-torch>=2.5.0
+torch==2.8.0  # required by sentence-transformers, pre-built wheel to avoid build errors
+
+# LLM / summarization
 transformers==4.42.2
+
+# for environment variables
+python-dotenv==1.1.1
