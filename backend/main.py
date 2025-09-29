@@ -15,6 +15,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def root():
+    return {"message": "FastAPI app is running!"}
+
 @app.post("/upload")
 async def upload_file(file: UploadFile):
     text = extract_text_from_pdf(file.file)
