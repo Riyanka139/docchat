@@ -1,5 +1,6 @@
 import { Button, Card, CardContent, Stack, Typography } from "@mui/material";
 import { useState } from "react";
+import { uploadFile } from "../api";
 
 export default function FileUpload() {
   const [file, setFile] = useState(null);
@@ -14,13 +15,7 @@ export default function FileUpload() {
       return;
     }
 
-    const formData = new FormData();
-    formData.append("file", file);
-
-    await fetch("http://localhost:8000/upload", {
-      method: "POST",
-      body: formData,
-    });
+    await uploadFile(file)
 
     alert("✅ File uploaded successfully!");
     setFile(null);
